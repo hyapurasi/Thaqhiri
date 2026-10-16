@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7f8; margin: 0; }
+    .contenedor { max-width: 720px; margin: auto; padding: 24px; }
+    .tarjeta { background: white; padding: 24px; margin-bottom: 18px; border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    h1 { margin-top: 0; }
+    textarea { width: 100%; min-height: 130px; padding: 12px; font-size: 16px; box-sizing: border-box; }
+    select { padding: 8px; font-size: 16px; }
+    button { margin-top: 14px; padding: 12px 20px; font-size: 16px; cursor: pointer; }
+    #respuestaThaqhiri { display: none; }
+    .nivel { font-size: 12px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+  <div class="tarjeta">
+    <h1>Thaqhiri</h1>
+    <p>Vamos a investigar cómo el agua puede influir en el crecimiento de una planta.</p>
+  </div>
+
+
+  <div class="tarjeta">
+    <label>Grado:</label>
+    <select id="grado">
+      <option value="3">3.º</option>
+      <option value="4">4.º</option>
+      <option value="5" selected>5.º</option>
+      <option value="6">6.º</option>
+    </select>
+  </div>
+
+
+  <div class="tarjeta">
+    <strong>Pregunta de investigación</strong>
+    <p id="pregunta">¿Cómo influye la cantidad de agua en el crecimiento de una planta?</p>
+  </div>
+
+
+  <div class="tarjeta">
+    <label for="hipotesis"><strong>¿Qué crees que ocurrirá?</strong></label>
+    <p>Escribe tu idea con tus propias palabras.</p>
+    <textarea id="hipotesis" placeholder="Escribe aquí lo que piensas..."></textarea>
+    <button id="btnEnviar" onclick="enviarRespuesta()">Continuar</button>
+  </div>
+
+
+  <div id="respuestaThaqhiri" class="tarjeta">
+    <strong>Thaqhiri</strong>
+    <p id="mensajeTutor"></p>
+    <div id="nivelMMIFC" class="nivel"></div>
+  </div>
+</div>
+
+
+<script>
+let intento = 1;
+
+
+function enviarRespuesta() {
+  const hipotesis = document.getElementById('hipotesis').value.trim();
+
+
+  if (!hipotesis) {
+    alert('Escribe primero lo que crees que ocurrirá.');
+    return;
+  }
+
+
+  const boton = document.getElementById('btnEnviar');
+  boton.disabled = true;
+  boton.textContent = 'Thaqhiri está pensando...';
+
+
+  const datos = {
+    estudianteId: 'PILOTO-001',
+    grado: document.getElementById('grado').value,
+    pregunta: document.getElementById('pregunta').innerText,
+    hipotesis: hipotesis,
+    intento: intento
+  };
+
+
+  google.script.run
+    .withSuccessHandler(mostrarResultado)
+    .withFailureHandler(mostrarError)
+    .analizarHipotesis(datos);
+}
+
+
+function mostrarResultado(resultado) {
+  const caja = document.getElementById('respuestaThaqhiri');
+  caja.style.display = 'block';
+
+
+  document.getElementById('mensajeTutor').innerText = resultado.mmifc.mensaje;
+  document.getElementById('nivelMMIFC').innerText =
+    'Nivel MMIFC: ' + resultado.mmifc.nivel +
+    ' | Proceso: ' + resultado.mmifc.procesoObjetivo;
+
+
+  if (resultado.mmifc.requiereReintento) {
+    intento++;
+    document.getElementById('btnEnviar').textContent = 'Volver a intentarlo';
+  } else {
+    document.getElementById('btnEnviar').textContent = 'Hipótesis completada';
+  }
+
+
+  document.getElementById('btnEnviar').disabled = !resultado.mmifc.requiereReintento;
+}
+
+
+function mostrarError(error) {
+  alert('Ocurrió un error: ' + error.message);
+  const boton = document.getElementById('btnEnviar');
+  boton.disabled = false;
+  boton.textContent = 'Intentar nuevamente';
+}
+</script>
+</body>
+</html>
