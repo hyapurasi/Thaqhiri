@@ -22,6 +22,10 @@ La investigación doctoral actual aborda tercero de primaria y concentra su eval
 
 **[Mentales — Operaciones mentales](https://github.com/hyapurasi/Mentales)**: repositorio independiente para la investigación sobre procesos u operaciones mentales y sus aplicaciones educativas. Ambos proyectos pueden compartir referentes teóricos, pero **no son idénticos**, ni se ha fusionado su historial.
 
+## Código histórico recuperado
+
+- [Thaqhiri 0.1.0 — prototipo web con IA documentado en 2026](archivo-historico/prototipo-0.1.0-2026/README.md): cuatro archivos Apps Script/HTML, arquitectura, procedencia y limitaciones. **No corresponde al commit original de 2018.**
+
 ## Versiones y atribución
 
 Cada producto incorporado deberá indicar su código, versión, estado de auditoría, fecha efectiva de incorporación y evidencias históricas relevantes. Se preservarán los archivos y commits antiguos sin atribuirles contenidos desarrollados con posterioridad.
