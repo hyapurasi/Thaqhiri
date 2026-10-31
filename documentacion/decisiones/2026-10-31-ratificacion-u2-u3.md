@@ -1,0 +1,8 @@
+# Ratificación de situaciones de indagación U2 y U3
+
+DECISIÓN RATIFICADA — 31/10/2026 — U2 Y U3 THAQHIRI
+El usuario ratifica expresamente las situaciones previamente dispuestas, sin reemplazarlas por alternativas.
+U2 (Tesis I): cuerpo humano, funcionamiento, alimentación y salud. Situación U2-IND-01: comparar el cambio de temperatura del agua en recipientes iguales, uno con cubierta aislante y otro sin ella. Se mantiene la pregunta articuladora «¿Cómo obtiene y utiliza nuestro cuerpo lo que necesita para funcionar?». El ensayo térmico complementa, no reemplaza, el núcleo biológico; no permite inferir seguridad sanitaria.
+U3 (Tesis II): organismos, condiciones ambientales e interacciones. Situación U3-IND-01, adaptación de G3-01: comparar durante 14 días plantas de la misma especie en dos sustratos definidos y cuidados comunes. Pregunta articuladora «¿Qué ocurre cuando cambian las condiciones del ambiente donde viven los seres vivos?». No atribuir diferencias exclusivamente a nutrientes u otra propiedad no aislada.
+Se conservan como base de trabajo las propuestas PLA-02/PLA-03 de ocho sesiones por unidad, sujetas a revisión, factibilidad, programación y validación. No se declaran aprobados los instrumentos, las rúbricas ni los protocolos técnicos.
+La intervención doctoral compara propuesta curricular común en GE y GC; el GE recibe Thaqhiri integral, el GC no. Siguiente trabajo: desarrollar U2 completa, luego U3 con arquitectura didáctica equivalente; alinear criterios oficiales CNEB, tareas IND3-01 a IND3-07, evidencias, cuadernillo maestro, textos comunes, puntos de mediación y fidelidad experimental.
